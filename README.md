@@ -6,6 +6,14 @@ This repository contains the code for the project relative to the course `Deep N
 
 ## Implementation details
 
+### Libraries detail
+```
+python 3.7.12
+transformers 4.16.2
+datasets 1.18.3
+metrics 0.3.3
+```
+
 ### Multilingual finetuning
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1FSdk0dYF13gYgiBFm_LhdIydEm9n-mfW?usp=sharing)

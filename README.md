@@ -12,6 +12,7 @@ python 3.7.12
 transformers 4.16.2
 datasets 1.18.3
 metrics 0.3.3
+sacrebleu 2.0.0
 ```
 
 ### Multilingual finetuning

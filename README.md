@@ -13,6 +13,7 @@ transformers 4.16.2
 datasets 1.18.3
 metrics 0.3.3
 sacrebleu 2.0.0
+torch 1.10.0 + cu111
 ```
 
 ### Multilingual finetuning

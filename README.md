@@ -40,13 +40,21 @@ In this task, the approach is experimented on the [WikiMatrix](https://github.co
 Some of the models finetuned within this project are available on the [Huggingface hub](https://huggingface.co/CLAck), so they can be downloaded and used. An example of usage is provided in the following.
 ```python
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-
 # Download the pretrained model for English-Vietnamese available on the hub
 model = AutoModelForSeq2SeqLM.from_pretrained("CLAck/en-vi")
-tokenizer = AutoTokenizer.from_pretrained("CLAck/en-vi")
 
-input_sentence = "The cat sat on the mat"
-translated = model.generate(**tokenizer(input_sentence, return_tensors="pt", padding=True))
+tokenizer = AutoTokenizer.from_pretrained("CLAck/en-vi")
+# Download a tokenizer that can tokenize English since the model Tokenizer doesn't know anymore how to do it
+# We used the one coming from the initial model
+# This tokenizer is used to tokenize the input sentence
+tokenizer_en = AutoTokenizer.from_pretrained('Helsinki-NLP/opus-mt-en-zh')
+# These special tokens are needed to reproduce the original tokenizer
+tokenizer_en.add_tokens(["<2zh>", "<2vi>"], special_tokens=True)
+
+sentence = "The cat sat on the mat"
+# This token is needed to identify the target language
+input_sentence = "<2vi> " + sentence 
+translated = model.generate(**tokenizer_en(input_sentence, return_tensors="pt", padding=True))
 output_sentence = [tokenizer.decode(t, skip_special_tokens=True) for t in translated]
 
 ```

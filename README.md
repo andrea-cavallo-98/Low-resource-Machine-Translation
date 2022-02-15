@@ -37,6 +37,9 @@ For this task, the initial model is [MarianMT pretrained on a Chinese-English](h
 In this task, the approach is experimented on the [WikiMatrix](https://github.com/facebookresearch/LASER/tree/main/tasks/WikiMatrix) dataset, which consists on many parallel sentences mined from Wikipedia using a distance metric to predict alignments. The selected language pair is English-Kazakh because it contains the same number of samples as those in the previous sections. The starting model is [MarianMT pretrained on English-Turkish](https://huggingface.co/Helsinki-NLP/opus-tatoeba-en-tr), and results are evaluated using the BLEU score. The code for model finetuning is available in the [finetuning_en_kazakh](finetuning_en_kazakh.ipynb) notebook.
 
 ## Model usage
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ugCbVjLzCbJST_xQiJ_Qff0uUnLOmurq?usp=sharing)
+
 Some of the models finetuned within this project are available on the [Huggingface hub](https://huggingface.co/CLAck), so they can be downloaded and used. An example of usage is provided in the following.
 ```python
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer

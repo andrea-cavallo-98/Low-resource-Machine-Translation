@@ -5,13 +5,14 @@ This repository contains the code for the project relative to the course `Deep N
 * The same approach is tested on a different dataset and a different language pair
 
 ## Implementation details
+Python version used is ```3.7.12```
 
 ### Libraries detail
 ```
-python 3.7.12
 transformers 4.16.2
 datasets 1.18.3
 metrics 0.3.3
+sentencepiece 0.1.96
 sacrebleu 2.0.0
 torch 1.10.0 + cu111
 ```
